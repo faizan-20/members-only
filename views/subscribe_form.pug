@@ -5,7 +5,7 @@ block content
     div#container 
         if subscribed
             h1= msg
-            p= a(href="/") Home 
+            p #[a(href="/") Home] 
         else
             h1 Join the club for exclusive features
             form(method='POST' action='')
@@ -13,7 +13,7 @@ block content
                     label(for="key") Enter Key: 
                     input(type="text" placeholder="Secret Key" name="key")
                 button(type="submit") Submit
-            p= a(href="/") Home 
+            p #[a(href="/") Home] 
             
             if error 
                 p #{error}
