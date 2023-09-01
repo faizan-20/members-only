@@ -18,7 +18,7 @@ exports.subscribe_post = asyncHandler(async (req, res, next) => {
         });
 
         await User.findByIdAndUpdate(req.user._id, user, {});
-        res.render("subscribe_form", { msg: "Congratulations you are now a member!", subscribed: req.user.subscribed });
+        res.redirect("/");
     } else {
         res.render("subscribe_form", { error: "Wrong Key", subscribed: req.user.subscribed });
     }
