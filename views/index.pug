@@ -1,0 +1,57 @@
+extends layout
+
+block content
+  h1= title
+
+  if user
+    if !user.subscribed
+      p Welcome #{user.username} to #{title} #[a(href='/log-out') Log out]
+      p To see the author of messages and timestamp #[a(href='/subscribe') Join The Club!]
+      hr
+      a(href='/new-message') Create a new message!
+
+      div#messages
+        h2 All Messages
+          if messages
+              for message in messages
+                div#message 
+                  div#user #[strong Name:] Anonymus
+                  div#title #[strong Title:] #{message.title} 
+                  div#text #[strong Message:] #{message.text}
+          else 
+            p There are no messages.
+    else 
+      p Welcome #{user.username} to #{title}
+      a(href='/log-out') Log out
+      hr
+      a(href='/new-message') Create a new message!
+
+      div#messages
+        h2 All Messages
+        if messages
+            for message in messages
+              div#message 
+                div#user #[strong Name:] #{message.user.name}
+                div#timestamp #[strong #{message.timestamp_formatted}]
+                div#title #[strong Title:] #{message.title} 
+                div#text #[strong Message:] #{message.text}
+        else 
+          p There are no messages.
+
+
+  else 
+    h3 To create new messages #[a(href='/log-in') Log In]
+
+    hr
+
+    div#messages
+      p #[a(href='/log-in') Log In] or #[a(href='/sign-up') Sign Up] to join the club and see the author and timestamp of messages. 
+      h2 All Messages
+      if messages
+          for message in messages
+            div#message 
+              div#user #[strong Name:] Anonymus
+              div#title #[strong Title:] #{message.title} 
+              div#text #[strong Message:] #{message.text}
+      else 
+        p There are no messages.

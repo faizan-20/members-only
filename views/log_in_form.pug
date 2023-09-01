@@ -1,0 +1,15 @@
+extends layout 
+
+block content 
+
+    div#form
+      h1 Log In
+      form(action='/log-in' method='POST')
+        div.form-group
+            label(for='username') Username:
+            input#username(type='text' placeholder='username' name='username' required='true')
+            label(for='password') Password: 
+            input#password(type='password' palaceholder='password' name='password' required='true')
+        button(type='submit') Submit
+    
+      p #[strong Don't have an account?] #[a(href='/sign-up') Sign Up]

@@ -1,0 +1,57 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+  font-size: 1.25rem;
+}
+
+#message {
+  background-color: rgba(245, 245, 220, 0.399);
+  padding: 1rem;
+  width: 50rem;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid gray;
+}
+
+#user {
+  margin-bottom: 0.5rem;
+}
+
+#title, #timestamp {
+  margin-bottom: 1rem;
+}
+
+#timestamp {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+p > a {
+  font-size: 1.25rem;
+}
+
+label {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+input {
+  font-size: 1.5 rem;
+  padding: 6px 10px;
+  margin-right: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+button {
+  font-size: 1.25rem;
+}
